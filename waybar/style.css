@@ -82,7 +82,7 @@ button:hover {
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
     /* background-color: #a37800; */
-    background-color: @color-buttons-hover-right;
+    /* background-color: @color-buttons-hover-right; */
 }
 
 #workspaces button {
@@ -114,29 +114,59 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
 #disk,
 #temperature,
 #backlight,
-#network,
-#pulseaudio,
 #wireplumber,
 #custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#power-profiles-daemon,
-#bluetooth,
+#cpu,
+#memory,
 #mpd {
     padding: 0 5px;
     background-color: @color-buttons-right;
     min-width: 60px;
     min-height: 6.54ex;
     transition: box-shadow .2s ease;
+}
+
+@keyframes fill {
+  to {
+    /* background-color: red; */
+    /* color: #000000; */
+    box-shadow: inset 7rem 0 0 0 @color-neon-blue;
+  }
+}
+
+@keyframes rounding {
+  to {
+    background-color: @color-neon-light-blue;
+    /* color: #000000; */
+    box-shadow: inset 0px 0px 10px 6px @color-neon-blue;
+  }
+}
+
+#network,
+#pulseaudio,
+#power-profiles-daemon,
+#battery,
+#clock,
+#bluetooth {
+  padding: 0 5px;
+  background-color: @color-dark-blue;
+  min-width: 60px;
+  min-height: 6.54ex;
+  transition: box-shadow .2s ease;
+  box-shadow: inset 0px 0px 10px 2px @color-sky-blue;
+
+  animation-name: rounding;
+  animation-duration: 1.5s;
+  animation-timing-function: steps(30);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #window,
@@ -160,7 +190,7 @@ button:hover {
     border-bottom-right-radius: 10px;
 }
 #clock:hover {
-    background-color: @color-buttons-hover-right;
+    /* background-color: @color-buttons-hover-right; */
     box-shadow: inset 0 -7px @color-black;
 }
 
@@ -170,7 +200,7 @@ button:hover {
     /* border-radius: 10px; */
 }
 #battery:hover {
-    background-color: @color-buttons-hover-right;
+    /* background-color: @color-buttons-hover-right; */
     box-shadow: inset 0 -7px @color-black;
 }
 
@@ -202,7 +232,7 @@ button:hover {
 #power-profiles-daemon:hover {
     /* padding-right: 15px; */
     /* border-radius: 10px; */
-    background-color: @color-buttons-hover-right;
+    /* background-color: @color-buttons-hover-right; */
     box-shadow: inset 0 -7px @color-black;
 }
 
@@ -282,7 +312,7 @@ label:focus {
     /* border-radius: 10px; */
 }
 #network:hover {
-    background-color: @color-buttons-hover-right;
+    /* background-color: @color-buttons-hover-right; */
     box-shadow: inset 0 -7px @color-black;
 }
 
@@ -347,7 +377,7 @@ label:focus {
 }
 
 #bluetooth:hover {
-    background-color: @color-buttons-hover-right;
+    /* background-color: @color-buttons-hover-right; */
     box-shadow: inset 0 -7px @color-black;
 }
 
@@ -402,12 +432,12 @@ label:focus {
 }
 
 #custom-power {
-    background-color: @color-dark-blue;
-    color: #ffffff;
-    padding: 0 5px;
-    margin: 0 5px;
-    margin-right: 20px;
-    border-radius: 10px;
+  background-color: @color-dark-blue;
+  color: #ffffff;
+  padding: 0 5px;
+  margin: 0 5px;
+  margin-right: 20px;
+  border-radius: 10px;
 }
 
 #custom-menu {

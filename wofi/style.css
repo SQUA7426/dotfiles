@@ -1,0 +1,65 @@
+window {
+  font-size: 15px;
+  font-family: "Junicode VF Medium", serif;
+  font-style: italic;
+  background-color: transparent;
+}
+
+#outer-box {
+  background-color: blue;
+  border: 2px #0100ff;
+  border-radius: 250px; 
+  padding: 20px;
+}
+
+#input {
+  background-color: rgba(50, 50, 50 , 0.5);
+  color: white;
+  margin: 10px;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+#scroll {
+  margin-top: 10px;
+}
+
+#scroll slider {
+  background-color: transparent;
+  border: none;
+}
+
+#entry {
+  opacity: 0.5;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50px;
+  border: none;
+}
+
+#entry:selected {
+  opacity: 1;
+  background: linear-gradient(90deg, #ff1111, #0000ff);
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+
+#text {
+  margin-left: 10px;
+  color: yellow;
+}
+
+#text:selected {
+  margin-left: 20px; 
+  font-weight: bold;
+}
+
+image {
+  opacity: 0.5;
+  margin-left: 10px;
+}
+
+image:selected {
+  opacity: 1;
+}

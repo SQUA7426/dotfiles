@@ -449,6 +449,12 @@ label:focus {
   min-width: 6.54ex;
   min-height: 6.54ex;
   transition: all 0.5s ease;
+
+  animation-name: rounding;
+  animation-duration: 1.5s;
+  animation-timing-function: steps(30);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #group-menu-group #custom-menu:hover {

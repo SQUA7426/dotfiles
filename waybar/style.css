@@ -71,6 +71,18 @@ button {
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 10px;
+    padding: 0 5px;
+    background-color: @color-dark-blue;
+    min-width: 60px;
+    min-height: 3.54ex;
+    transition: box-shadow .2s ease;
+    box-shadow: inset 0px 0px 10px 2px @color-sky-blue;
+
+    animation-name: rounding;
+    animation-duration: 1.5s;
+    animation-timing-function: steps(30);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -148,7 +160,6 @@ button:hover {
     box-shadow: inset 0px 0px 10px 6px @color-neon-blue;
   }
 }
-
 #network,
 #pulseaudio,
 #power-profiles-daemon,

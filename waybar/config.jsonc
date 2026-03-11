@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-  "layer": "bottom", // Waybar at top layer
+  "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   "height": 30, // Waybar height (to be removed for auto height)
   // "width": 2400, // Waybar width
@@ -29,21 +29,20 @@
   ],
   // Modules configuration
   "hyprland/workspaces": {
-    //     "disable-scroll": true,
-    // "all-outputs": true,
-    //     "warp-on-scroll": false,
-    "format": "{name}: {icon}",
-    // "format-window-seperator": "",
-    "format-icons": {
-      "1": "  |  ",
-      //         "2": "",
-      "2": "  ",
-      "3": " |  ",
-      "4": " ",
-      "5": " "
-      // "urgent": "",
-      // "focused": "",
-      // "default": ""
+    "format": "{name}: {windows}",
+    "format-window-separator": " | ",
+    "window-rewrite-default": " ",
+    "window-rewrite": {
+      "title<.*brave.*>": " ",
+      "class<discord>": " ",
+      "class<firefox>": " ", // Windows whose classes are "firefox"
+      "class<firefox> title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+      "class<firefox> title<.*discord.*>": " ",
+      "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
+      "class<kitty>": "  |  ",
+      "class<spotify>": " ",
+      "title<.*spotify.*>": " ",
+      "title<.*whatsapp.*>": " "
     }
   },
   "keyboard-state": {
@@ -173,8 +172,8 @@
     // "format-alt": "{time} {icon}",
     // "format": "{capacity}%",
     "format-full": "{capacity}%",
-    "format-charging": "{capacity}%",
-    "format-plugged": "{capacity}%",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
     "format-alt": "{time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
@@ -207,9 +206,9 @@
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{ifname} via {gwaddr}   signalStrength: {signalStrength}%",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠"
+    "format-disconnected": "   ",
     // "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    // "on-click": "nmtui"
+    "on-click": "nm-connection-editor"
   },
   "bluetooth": {
     "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
